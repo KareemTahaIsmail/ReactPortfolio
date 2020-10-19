@@ -1,0 +1,290 @@
+/* Flip Card Styling */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: transparent;
+  width: 80%;
+  height: 500px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  border-radius: 25px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.2s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+/* .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  } */
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  border-radius: 25px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  display: flex;
+  background: url("../../images/background1.jpg");
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.6);
+  background: url("../../images/background2.jpg");
+  color: white;
+  transform: rotateY(180deg);
+}
+/* End of Flip Card Styling */
+
+/* Front Content */
+.front-main {
+  display: block;
+  /* border: solid thick white; */
+  min-width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .front-main {
+    display: none;
+  }
+}
+.displayImg {
+  border-radius: 50%;
+  width: 100%;
+  height: 370px;
+
+  margin-top: 90px;
+  float: left;
+  background-blend-mode: lighten;
+}
+
+.front-content {
+  /* border: solid thick yellow; */
+  width: 80%;
+}
+
+h1 {
+  color: white;
+  margin-top: 100px;
+  margin-bottom: -15px;
+  font-family: Bahnschrift Light;
+}
+.front-content p {
+  color: white;
+  padding: 30px;
+  font-family: Bahnschrift Light;
+}
+
+ul {
+  margin-top: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+li {
+  position: relative;
+  top: 0px;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+  font-family: Bahnschrift Light;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  top: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+li a:hover {
+  top: -5px;
+}
+
+li i {
+  color: white;
+  font-size: 25px;
+}
+
+li span {
+  margin-left: 10px;
+}
+
+.front-btn {
+  font-size: 20px;
+  font: bold;
+  font-family: Bahnschrift Light;
+  border-radius: 25px;
+  background-color: transparent;
+  color: white;
+  width: auto;
+  height: auto;
+  margin-top: 90px;
+  margin-left: 300px;
+  padding: 9px;
+  position: relative;
+  top: 0px;
+  transition: all 0.3s ease-in-out;
+  border: solid thin white;
+}
+
+.front-btn:hover {
+  top: -5px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.front-btn:active {
+  outline: none;
+}
+
+/* End of Front Content */
+
+/* Back Content */
+
+.container {
+  height: 100%;
+}
+.row {
+  height: auto;
+}
+.col {
+  font-family: Bahnschrift Light;
+  float: left;
+  max-width: 300px;
+  margin-left: 90px;
+  margin-bottom: -10px;
+  margin-top: 60px;
+}
+.col img {
+  width: 250px;
+  height: 190px;
+  border-radius: 10px;
+  box-shadow: black 10px 10px 10px 0px;
+}
+.project-heading {
+  opacity: 0;
+  margin-left: 25px;
+  border-radius: 10px;
+  position: absolute;
+  width: 251px;
+  height: 190px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.project-heading:hover {
+  opacity: 1;
+}
+h3 {
+  margin-top: 40px;
+  color: white;
+  text-align: center;
+}
+
+.buttons {
+  display: flex-inline;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border: solid thin white;
+  border-radius: 10px;
+  padding: 5px;
+  position: relative;
+  top: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-src:hover {
+  top: -3px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn-try {
+  margin-left: 20px;
+}
+.btn-try:hover {
+  top: -3px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+h4 {
+  margin-top: 10px;
+}
+h4:hover {
+  cursor: pointer;
+}
+
+.details {
+  overflow: hidden;
+  margin-top: -10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.details p {
+  margin-top: 40px;
+  font-size: 13px;
+}
+
+.back-btn {
+  float: right;
+  margin-top: 70px;
+  margin-right: 25px;
+  font-size: 20px;
+  font: bold;
+  font-family: Bahnschrift Light;
+  border-radius: 25px;
+  background-color: transparent;
+  color: white;
+  width: auto;
+  height: auto;
+  padding: 9px;
+  position: relative;
+  top: 0px;
+  transition: all 0.3s ease-in-out;
+  border: solid thin white;
+}
+
+.back-btn:hover {
+    top: -5px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+  }
+/* End of Back Content */
